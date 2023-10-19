@@ -1,0 +1,63 @@
+<p class="container-fluid fs-2 text-center mt-3 text-danger">
+  VERFICATION APP
+</p>
+<section class="container w-50 my-5">
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="exampleInputPassword1"
+      [(ngModel)]="nameRef"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Phone Number</label>
+    <input
+      type="text"
+      class="form-control"
+      id="exampleInputPassword1"
+      [(ngModel)]="phonenumberRef"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input
+      type="email"
+      class="form-control"
+      id="exampleInputEmail1"
+      aria-describedby="emailHelp"
+      [(ngModel)]="emailRef"
+    />
+  </div>
+  <button type="button" class="btn btn-primary" (click)="add()">
+    {{ Add }}
+  </button>
+</section>
+<p class="fs-3 mt-3 text-center text-primary">Entered Details</p>
+<table class="table table-hover container w-50">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Phone Number</th>
+      <th>Email</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let array of arrays">
+    <tr>
+      <td>{{ array.id }}</td>
+      <td>{{ array.name }}</td>
+      <td>{{ array.phonenumber }}</td>
+      <td>{{ array.email }}</td>
+      <td>
+        <button class="btn btn-warning ms-2" (click)="edit(array.id)">
+          Edit</button
+        ><button class="btn btn-danger ms-2" (click)="delete(array.id)">
+          Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
